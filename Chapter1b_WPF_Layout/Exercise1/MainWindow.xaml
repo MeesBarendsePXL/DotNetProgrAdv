@@ -6,5 +6,37 @@
         xmlns:local="clr-namespace:Exercise1"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
-    
+	<DockPanel>
+		<Button DockPanel.Dock="Right">
+			<StackPanel>
+				<TextBlock Margin="4">a</TextBlock>
+				<TextBlock Margin="4">b</TextBlock>
+				<TextBlock Margin="4">c</TextBlock>
+			</StackPanel>
+		</Button>
+		<Grid >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"></RowDefinition>
+				<RowDefinition Height="3*"></RowDefinition>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="100"></ColumnDefinition>
+				<ColumnDefinition></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+
+			<Button Grid.Column="0" Grid.Row="0">a</Button>
+			<Button VerticalAlignment="Center" Grid.Column="0" Grid.Row="1">b</Button>
+			<Button  Grid.Column="1" Grid.Row="0">c</Button>
+			<WrapPanel Grid.Row="1" Grid.Column="1">
+				<Button>a</Button>
+				<Button>a</Button>
+				<Button>a</Button>
+				<Button>a</Button>
+				<Button>a</Button>
+
+			</WrapPanel>
+		</Grid>
+		
+	</DockPanel>
 </Window>

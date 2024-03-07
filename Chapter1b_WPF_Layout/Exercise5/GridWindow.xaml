@@ -7,6 +7,44 @@
         mc:Ignorable="d"
         Title="GridWindow" Height="450" Width="800">
     <Grid>
-       
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"></RowDefinition>
+			<RowDefinition Height="20"></RowDefinition>
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0" Orientation="Horizontal">
+			<Button Click="Button_Click"></Button>
+			<TextBlock></TextBlock>
+			<TextBlock></TextBlock>
+			<TextBox></TextBox>
+			<TextBox></TextBox>
+		</StackPanel>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition></ColumnDefinition>
+				<ColumnDefinition></ColumnDefinition>
+				<ColumnDefinition></ColumnDefinition>
+				<ColumnDefinition></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+				<RowDefinition></RowDefinition>
+			</Grid.RowDefinitions>
+			<Button Background="LightGreen" Grid.Row="1" Grid.Column="2"></Button>
+			<Button Background="LightGreen" Grid.Row="3" Grid.Column="3"></Button>
+			<Button Background="LightGreen" Grid.Row="0" Grid.Column="2"></Button>
+			<Button Background="LightGreen" Grid.Row="3" Grid.Column="2"></Button>
+			<Button Background="LightGreen" Grid.Row="3" Grid.Column="0"></Button>
+			<Button Background="LightGreen" Grid.Row="0" Grid.Column="0"></Button>
+			<Button Background="LightGreen" Grid.Row="2" Grid.Column="2"></Button>
+			<Button Background="LightGreen" Grid.Row="0" Grid.Column="3"></Button>
+			<Button Background="LightGreen" Grid.Row="1" Grid.Column="0"></Button>
+
+
+
+		</Grid>
     </Grid>
 </Window>

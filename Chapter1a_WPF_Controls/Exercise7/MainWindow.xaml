@@ -7,6 +7,26 @@
         mc:Ignorable="d"
               Title="Color ListView" Height="300" Width="300">
     <Grid>
-        
+		<ListView>
+			<ListViewItem>
+				<StackPanel Orientation="Horizontal">
+					<Image Source="C:\Users\zwart\OneDrive - PXL\school\dotNet\Guts-DotNetProgrAdv-23-24\Chapter1a_WPF_Controls\Exercise7\images\green.png"></Image>
+					<TextBlock>test</TextBlock>
+				</StackPanel>
+			</ListViewItem>
+			<ListViewItem>
+				<StackPanel Orientation="Horizontal">
+					<Image Source="C:\Users\zwart\OneDrive - PXL\school\dotNet\Guts-DotNetProgrAdv-23-24\Chapter1a_WPF_Controls\Exercise7\images\green.png"></Image>
+					<TextBlock>test</TextBlock>
+				</StackPanel>
+			</ListViewItem>
+			<ListViewItem>
+				<StackPanel Orientation="Horizontal">
+					<Image Source="C:\Users\zwart\OneDrive - PXL\school\dotNet\Guts-DotNetProgrAdv-23-24\Chapter1a_WPF_Controls\Exercise7\images\green.png"></Image>
+					<TextBlock>test</TextBlock>
+				</StackPanel>
+			</ListViewItem>
+			
+		</ListView>
     </Grid>
 </Window>

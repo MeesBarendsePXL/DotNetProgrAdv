@@ -6,5 +6,14 @@
         xmlns:local="clr-namespace:Exercise3"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="450">
-
+	<Canvas>
+		<Rectangle Height="100" Width="100" Canvas.Top="200" Canvas.Left="200" Fill="Black" Panel.ZIndex="10"></Rectangle>
+		<Rectangle Height="100" Width="100" Canvas.Top="300" Canvas.Left="200" Fill="Black" Panel.ZIndex="10"></Rectangle>
+		<Rectangle Height="100" Width="100" Canvas.Top="150" Canvas.Left="150" Fill="Yellow" Panel.ZIndex="0"></Rectangle>
+		<Rectangle Height="100" Width="100" Canvas.Top="350" Canvas.Left="150" Fill="Yellow" Panel.ZIndex="5"></Rectangle>
+		<Rectangle Height="100" Width="100" Canvas.Top="100" Canvas.Left="100" Fill="Blue" Panel.ZIndex="5"></Rectangle>
+		<Rectangle Height="100" Width="100" Canvas.Top="400" Canvas.Left="100" Fill="Blue"></Rectangle>
+		<Ellipse Canvas.Top="80" Canvas.Left="180" Width="70" Height="70" Fill="Red" Panel.ZIndex="10"></Ellipse>
+		<Ellipse Canvas.Top="250" Canvas.Left="100" Width="150" Height="150" Fill="Red" Panel.ZIndex=" 0"></Ellipse>
+	</Canvas>
 </Window>

@@ -6,6 +6,31 @@
         xmlns:local="clr-namespace:Exercise9"
         mc:Ignorable="d"
                 Title="CheckBox variations" Height="300" Width="300">
-    <Grid>
+	<Grid>
+		<CheckBox Margin="10" Content="standard checkbox">
+			
+		</CheckBox>
+		<CheckBox Margin=" 10,50">
+			<Border BorderThickness="10" CornerRadius="5" BorderBrush="Aqua" Padding="10">
+			<StackPanel>
+				<Image Source="images\kameleon.jpg" Stretch="Fill" Height="30"></Image>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock FontSize="16" FontWeight="Bold" Text="test" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10"/>
+						<TextBlock FontSize="16" FontWeight="Bold" Text="test" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10"/>
+					</StackPanel>
+
+				</StackPanel>
+			</Border>
+		</CheckBox>
+		<CheckBox Margin=" 10,100">
+			<TextBlock FontWeight="Bold" Foreground="White" Text="background color ">
+				<TextBlock.Background>
+					<LinearGradientBrush>
+						<GradientStop Color="Red" Offset="0"></GradientStop>
+						<GradientStop Color="Blue" Offset="0.9"></GradientStop>
+					</LinearGradientBrush>
+				</TextBlock.Background>
+			</TextBlock>
+		</CheckBox>
     </Grid>
 </Window>

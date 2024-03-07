@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:Exercise1"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
-  <Grid>
-      
-  </Grid>
+	<Grid>
+		<WrapPanel>
+		<Button Content="Simple Button" Width="280" Height="50" Margin="10,10,10,10"></Button>
+			<Button FontSize="16"  Width="280" Height="55" Margin="10,10,10,10" >
+				<StackPanel Orientation="Vertical">
+					<Image Source="images\banner.png" Stretch="Fill" Height="30"></Image>
+					<TextBlock FontSize="16" FontWeight="Bold" Text="test" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+				</StackPanel>
+			</Button>
+			<Button Content="Brush Button" Foreground="White" FontWeight="Bold" Width="280" Height="50" Margin="10,10,10,10">
+				<Button.Background>
+					<LinearGradientBrush>
+						<GradientStop Color="Yellow" Offset="0"></GradientStop>
+						<GradientStop Color="Green" Offset="0.3"></GradientStop>
+						<GradientStop Color="Blue" Offset="0.6"></GradientStop>
+						<GradientStop Color="Red" Offset="1"></GradientStop>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</WrapPanel>
+	</Grid>
+
+
 </Window>

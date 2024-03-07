@@ -17,7 +17,7 @@
             <RadioButton x:Name="nthPrimeRadioButton" IsChecked="False" Margin="8">nth Prime</RadioButton>
         </StackPanel>
         <Button x:Name="startButton" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="8" Click="StartButton_Click">Start</Button>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" >
             <TextBlock Margin="8" Padding="2">Progress</TextBlock>
             <ProgressBar x:Name="calculationProgressBar" Minimum="0" Maximum="1"
                          Height="10" Width="300" Margin="8" Padding="2" />

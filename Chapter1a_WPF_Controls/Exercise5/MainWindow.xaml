@@ -7,6 +7,18 @@
         mc:Ignorable="d"
          Title="Countries treeview" Height="350" Width="500">
     <Grid>
+		<TreeView>
+			<TreeViewItem Header="testText">
+				<TreeViewItem Header="land"></TreeViewItem>
+				<TreeViewItem Header="testContent"></TreeViewItem>
+				<TreeViewItem Header="testContent"></TreeViewItem>
+			</TreeViewItem>
+			<TreeViewItem Header="testText2">
+				<TreeViewItem Header="testContent"></TreeViewItem>
+				<TreeViewItem Header="testContent"></TreeViewItem>
+				<TreeViewItem Header="testContent"></TreeViewItem>
+			</TreeViewItem>
+        </TreeView>
         
     </Grid>
 </Window>

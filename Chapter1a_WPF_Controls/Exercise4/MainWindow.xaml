@@ -6,5 +6,32 @@
         xmlns:local="clr-namespace:Exercise4"
         mc:Ignorable="d"
         Title="Toggle and group" Height="350" Width="200">
-    
+	<Canvas>
+		<ToggleButton Canvas.Left="50"  Canvas.Top="30" VerticalAlignment="Top" Width="100" Height="20" IsChecked="False">
+			<ToggleButton.Style>
+				<Style>
+					<Setter Property="ToggleButton.Content" Value="uit"></Setter>
+					<Style.Triggers>
+						<Trigger Property="ToggleButton.IsChecked" Value="True">
+							<Setter Property="ToggleButton.Content" Value="aan"/>
+						</Trigger>
+					</Style.Triggers>
+				</Style>
+			</ToggleButton.Style>
+		</ToggleButton>
+		<GroupBox Header="Leeftijd" Canvas.Left="65" Canvas.Top="100" Height="80">
+			<StackPanel>
+				<CheckBox Content="0-18" IsChecked="True" ></CheckBox>
+				<CheckBox Content="19-50"></CheckBox>
+				<CheckBox Content="51-80"></CheckBox>
+			</StackPanel>
+		</GroupBox>
+		<GroupBox Header="Geslacht" Canvas.Left="65" Canvas.Top="240">
+			<StackPanel>
+				<RadioButton IsChecked="True">man</RadioButton>
+				<RadioButton>vrouw</RadioButton>
+			</StackPanel>
+		</GroupBox>
+	</Canvas>
+	
 </Window>

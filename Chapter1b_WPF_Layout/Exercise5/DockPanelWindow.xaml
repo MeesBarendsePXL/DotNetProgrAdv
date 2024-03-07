@@ -6,5 +6,12 @@
         xmlns:local="clr-namespace:Exercise5"
         mc:Ignorable="d"
         Title="DockPanelWindow" Height="450" Width="800">
-   
+	<DockPanel>
+		<Image></Image>
+		<Button Margin="5" Height="30" Width="80" DockPanel.Dock="Bottom">Bottom</Button>
+		<Button Margin="5" Height="30" Width="80" DockPanel.Dock="Left">Left</Button>
+		<Button Margin="5" Height="30"  Width="80" DockPanel.Dock="Right">Right</Button>
+		<Button Margin="5" Height="30" Width="80" DockPanel.Dock="Top">Top</Button>
+
+	</DockPanel>
 </Window>

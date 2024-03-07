@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:Exercise4"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Grid.IsSharedSizeScope="True">
-    <Grid>
-      
-    </Grid>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition SharedSizeGroup="A" Width="auto"></ColumnDefinition>
+			<ColumnDefinition Width="auto"></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition Width="auto"></ColumnDefinition>
+			<ColumnDefinition Width="auto" SharedSizeGroup="A"></ColumnDefinition>
+
+		</Grid.ColumnDefinitions>
+		
+		<GridSplitter Grid.Column="1" HorizontalAlignment="Center"></GridSplitter>
+		<GridSplitter Grid.Column="3" HorizontalAlignment="Center"></GridSplitter>
+		<Label Background="Black"></Label>
+		<Label Background="Yellow" Grid.Column="2"></Label>
+		<Label Background="Red" Grid.Column="4"></Label>
+	</Grid>
 </Window>

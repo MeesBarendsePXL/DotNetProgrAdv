@@ -17,6 +17,27 @@ namespace Exercise3
         {
             InitializeComponent();
         }
+
+        private void RepeatButton_Click_Grow(object sender, RoutedEventArgs e)
+        {
+
+            if (canvasTest.Width > testname.Width + 10)
+            {
+                testname.Height += 10;
+                testname.Width += 10;
+            }
+        
+        }
+
+        private void RepeatButton_Click_Shrink(object sender, RoutedEventArgs e)
+        {
+            if(testname.Width - 10  > 0)
+            {
+                testname.Height -= 10;
+                testname.Width -= 10;
+            }
+
+        }
     }
 
 }
