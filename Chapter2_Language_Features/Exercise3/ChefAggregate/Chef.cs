@@ -9,8 +9,12 @@ namespace Exercise3.ChefAggregate
 {
     public class Chef
     {
+        private readonly FrontDesk _frontdesk;
+        private IChefActions _chefActions;
         public Chef(FrontDesk frontDesk, IChefActions chefActions)
         { 
+            this._frontdesk = frontDesk;
+            this._chefActions = chefActions;
         }
 
 
