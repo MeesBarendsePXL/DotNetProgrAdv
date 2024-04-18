@@ -7,17 +7,18 @@
         xmlns:controls="clr-namespace:Exercise2.Controls"
         xmlns:viewModel="clr-namespace:Exercise2.ViewModel"
         xmlns:view="clr-namespace:Exercise2.View"
-        mc:Ignorable="d"
-        Title="Star Wars" Height="700" Width="700">
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type viewModel:SideBarViewModel}">
+		mc:Ignorable="d"
+        Title="Star Wars" Height="700" Width="700"
+		Name="window">
+	<Window.Resources>
+		<DataTemplate DataType="{x:Type viewModel:SideBarViewModel}">
             <view:SideBarView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:MovieDetailViewModel}">
             <view:MovieDetailView/>
         </DataTemplate>
     </Window.Resources>
-    <Grid>
+	<Grid Background="{StaticResource DarkRadialBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -27,9 +28,9 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <controls:HeaderControl Grid.ColumnSpan="2"/>
+        <controls:HeaderControl Grid.ColumnSpan="2" />
 
-        <ContentControl Grid.Row="1" Content="{Binding SideBarViewModel}"/>
+        <ContentControl Grid.Row="1" Content="{Binding SideBarViewModel}" />
         <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding MovieDetailViewModel}"/>
     </Grid>
 </Window>

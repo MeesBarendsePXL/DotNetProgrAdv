@@ -12,24 +12,31 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <GroupBox Header="All movies" Margin="10">
-            <ListView x:Name="MoviesListView" Margin="10">
+            <ListView x:Name="MoviesListView" Margin="10" ItemsSource="{Binding Path=Movies}">
+				<ListView.View>
+					<GridView AllowsColumnReorder="True">
+						<GridViewColumn DisplayMemberBinding="{Binding Path=Title , Mode=OneWay}" Width="150" Header="Title"></GridViewColumn>
+						<GridViewColumn DisplayMemberBinding="{Binding Path=Director, Mode=OneWay}" Width="150" Header="Director"></GridViewColumn>
+						<GridViewColumn DisplayMemberBinding="{Binding Path=ReleaseYear, Mode=OneWay}" Width="150" Header="Release year"></GridViewColumn>
+					</GridView>
+				</ListView.View>
             </ListView>
         </GroupBox>
-        <GroupBox x:Name="NewMovieGroupBox" Header="Add a new movie" Grid.Row="1" Margin="10">
+        <GroupBox x:Name="NewMovieGroupBox" Header="Add a new movie" Grid.Row="1" Margin="10" DataContext="{Binding Path=Movie}">
             <Grid>
-                <Label x:Name="TitleLabel" Content="_Title" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+				<Label x:Name="TitleLabel" Target="{Binding ElementName=TitleTextBox}" Content="_Title" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="TitleTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                             Width="150" Height="25" Margin="100,10,0,0" />
+                             Width="150" Height="25" Margin="100,10,0,0" Text="{Binding Path=Title}"/>
 
-                <Label x:Name="DirectorLabel" Content="_Director" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+				<Label x:Name="DirectorLabel" Target="{Binding ElementName=DirectorTextBox}" Content="_Director" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="DirectorTextBox" HorizontalAlignment="Left"  VerticalAlignment="Top" 
-                             Width="150" Height="25" Margin="100,50,0,0" />
+                             Width="150" Height="25" Margin="100,50,0,0" Text="{Binding Path=Director}"/>
 
-                <Label x:Name="ReleaseYearLabel" Content="_Release year" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+				<Label x:Name="ReleaseYearLabel" Target="{Binding ElementName=ReleaseYearTextBox}" Content="_Release year" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="ReleaseYearTextBox" HorizontalAlignment="Left"  VerticalAlignment="Top" 
-                         Width="150" Height="25" Margin="100,90,0,0" />
+                         Width="150" Height="25" Margin="100,90,0,0" Text="{Binding Path=ReleaseYear}"/>
 
-                <Button x:Name="AddNewMovieButton" HorizontalAlignment="Left" Margin="10,140,10,10" VerticalAlignment="Top">Add Movie</Button>
+                <Button x:Name="AddNewMovieButton" HorizontalAlignment="Left" Margin="10,140,10,10" VerticalAlignment="Top" Click="AddNewMovieButton_Click">Add Movie</Button>
                 <TextBlock x:Name="ErrorMessageTextBlock" HorizontalAlignment="Left" Margin="100,140,10,10" VerticalAlignment="Top"
                                Foreground="Red" FontSize="14"></TextBlock>
             </Grid>

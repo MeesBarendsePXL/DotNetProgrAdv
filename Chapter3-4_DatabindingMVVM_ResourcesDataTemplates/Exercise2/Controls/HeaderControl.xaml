@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:Exercise2.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="600">
-    <Grid>
-        <TextBlock Text="Star Wars" 
+	<Grid Background="{StaticResource DarkRadialBrush}">
+		<TextBlock Text="Star Wars" Foreground="{StaticResource FontBrush}"
                    FontSize="30" Padding="10"
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>

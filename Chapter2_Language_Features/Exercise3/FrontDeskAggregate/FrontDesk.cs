@@ -8,13 +8,21 @@ namespace Exercise3.FrontDeskAggregate
 {
     public class FrontDesk
     {
+        private readonly ObservableCollection<IOrder> _ordersBackingField;
         public event OrderCreatedHandler OrderCreated;
-        private readonly ObservableCollection<IOrder> _ordersBackingField = new ObservableCollection<IOrder>();
         public ObservableCollection<IOrder> _ordersProperty { get { return _ordersBackingField; } }
+
+        public FrontDesk()
+        {
+            _ordersBackingField = new ObservableCollection<IOrder>();
+        }
 
 
         public void AddOrder(int numberOfBurgers)
         {
+            Order order = new Order(numberOfBurgers);
+            _ordersBackingField.Add(order);
+            OrderCreated.Invoke(this,new OrderEventArgs(order));
         }
 
         public void RemoveCompletedOrders()

@@ -22,6 +22,7 @@ namespace Exercise2
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            outputTextBlock.Text = String.Empty;
             int[] inputs = new int[inputTextBox.Text.TrimEnd().TrimStart().Split(" ").Length];
             if (inputTextBox.Text == "")
             {
@@ -46,9 +47,12 @@ namespace Exercise2
         private void updateProgressBar(CalculationEventArgs args)
         {
             
+            Dispatcher.InvokeAsync(()=> {
 
-            calculationProgressBar.Value = args.ProgressPercentage;
-            outputTextBlock.Text += " " + args.Result.ToString();
+                calculationProgressBar.Value = args.ProgressPercentage;
+                outputTextBlock.Text += " " + args.Result.ToString();
+                outputTextBlock.Text = outputTextBlock.Text.TrimStart();
+            });
         }
 
 

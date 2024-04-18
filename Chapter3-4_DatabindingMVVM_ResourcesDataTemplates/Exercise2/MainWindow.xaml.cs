@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 using Exercise2.ViewModel;
 
 namespace Exercise2
@@ -18,7 +19,7 @@ namespace Exercise2
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            _viewModel.Load();
+//  _viewModel.Load();
         }
     }
 }

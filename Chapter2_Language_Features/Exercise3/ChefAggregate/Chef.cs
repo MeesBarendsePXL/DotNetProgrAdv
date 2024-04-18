@@ -11,10 +11,12 @@ namespace Exercise3.ChefAggregate
     {
         private readonly FrontDesk _frontdesk;
         private IChefActions _chefActions;
+        private Queue<IOrder> _orders = new Queue<IOrder>();
         public Chef(FrontDesk frontDesk, IChefActions chefActions)
         { 
             this._frontdesk = frontDesk;
             this._chefActions = chefActions;
+            this._frontdesk.OrderCreated += (Object sender, OrderEventArgs x) => { _orders.Enqueue(x.Order); };
         }
 
 
@@ -25,6 +27,18 @@ namespace Exercise3.ChefAggregate
             {
                 while (!cancellationToken.IsCancellationRequested)
                 {
+                    if(_orders.Count > 0)
+                    {
+                       Order order = (Order) _orders.Dequeue();
+                        order.IsStarted = true;
+                        for (global::System.Int32 i = 0; i < order.NumberOfBurgers; i++)
+                        {
+                            _chefActions.CookBurger();
+                        }
+                        _chefActions.TakeABreather();
+                        order.IsCompleted = true;
+                    }
+                    
                     //TODO: check if the queue contains an order. If so -> process it.
                 }
             }, cancellationToken);
