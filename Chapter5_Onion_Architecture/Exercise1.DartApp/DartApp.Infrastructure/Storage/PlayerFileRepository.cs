@@ -8,13 +8,17 @@ using System.IO;
 
 namespace DartApp.Infrastructure.Storage
 {
-    public class PlayerFileRepository
+    internal class PlayerFileRepository : IPlayerRepository
     {
         private readonly string _playerFileDirectory;
 
         public PlayerFileRepository(string playerFileDirectory)
         {
-
+            _playerFileDirectory = playerFileDirectory;
+            if(!Directory.Exists(_playerFileDirectory))
+            {
+                Directory.CreateDirectory(_playerFileDirectory);
+            }
         }
 
         public void Add(IPlayer player)
@@ -26,7 +30,14 @@ namespace DartApp.Infrastructure.Storage
         {
             //TODO: read all player files in the directory, convert them to IPlayer objects and return them
             //Tip: use helper methods that are given (ReadPlayerloadFromFile)
-            return null;
+
+            List<IPlayer> result = new List<IPlayer>();
+            foreach (String path in Directory.GetFiles(_playerFileDirectory))
+            {
+
+                result.Add(ReadPlayerFromFile(path));
+            }
+            return result;
         }
 
         public void SaveChanges(IPlayer player)
@@ -39,13 +50,23 @@ namespace DartApp.Infrastructure.Storage
         {
             //TODO: read the json in a player file and deserialize the json into an IPlayer object
             //Tip: use helper methods that are given (ConvertJsonToPlayer)
-            return null;
+
+            StreamReader reader = new StreamReader(playerFilePath);
+            String str = reader.ReadToEnd();
+            reader.Close();
+            return ConvertJsonToPlayer(str);
         }
 
         private void SavePlayer(IPlayer player)
         {
             //TODO: save the player in a json format in a file
             //Tip: use helper methods that are given (GetPLayerilePath, ConvertPlayerToJson)
+
+            StreamWriter writer = new StreamWriter(GetPlayerFilePath(player.Id));
+            writer.Write(ConvertPlayerToJson(player));
+            writer.Close();
+            
+
         }
 
         private string ConvertPlayerToJson(IPlayer player)
