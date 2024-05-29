@@ -14,18 +14,18 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Margin="12" Text="Title" Foreground="{StaticResource FontBrush}"></TextBlock>
-				<TextBlock Text="Opening crawl" Grid.Row="1" Foreground="{StaticResource FontBrush}"></TextBlock>
-                <StackPanel Grid.Row="2" Margin="20">
-                    <TextBlock Text="Rating" Margin="0 0 12 0"></TextBlock>
-                    <Slider Width="250"></Slider>
-                    <Button Margin="12" Padding="4">5 stars</Button>
+				<TextBlock Margin="12" Text="{Binding Path=Movie.Title, Mode=OneWay}" FontSize="16" HorizontalAlignment="Center" Foreground="{StaticResource FontBrush}"></TextBlock>
+				<TextBlock Text="{Binding Path=Movie.OpeningCrawl, Mode=OneWay}" FontStyle="Italic" HorizontalAlignment="Center" Grid.Row="1" Foreground="{StaticResource FontBrush}"></TextBlock>
+                <StackPanel Grid.Row="2" Margin="20" HorizontalAlignment="Center">
+					<TextBlock Text="{Binding Path=Movie.Rating}" Foreground="{StaticResource FontBrush}" Margin="0 0 12 0" ></TextBlock>
+					<Slider Foreground="{StaticResource FontBrush}" Width="250" Minimum="1" Maximum="5" TickPlacement="BottomRight" AutoToolTipPlacement="TopLeft" Value="{Binding Path=Movie.Rating, Mode=TwoWay}"></Slider>
+					<Button Margin="12" Padding="4" Command="{Binding Path=GiveFiveStarRatingCommand}">5 stars</Button>
                 </StackPanel>
             </Grid>
         </ScrollViewer>
 
-        <Grid Visibility="Hidden">
-            <TextBlock Text="Please select a movie in the sidebar"></TextBlock>
+		<Grid Visibility="{Binding Path=HasNoMovie, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}" Background="{StaticResource DarkSolidBrush}">
+            <TextBlock Text="Please select a movie in the sidebar" Foreground="{StaticResource FontBrush}"></TextBlock>
         </Grid>
     </Grid>
 

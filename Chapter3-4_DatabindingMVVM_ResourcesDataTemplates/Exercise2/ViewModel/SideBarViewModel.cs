@@ -10,7 +10,6 @@ public class SideBarViewModel : ViewModelBase, ISideBarViewModel, INotifyPropert
     private readonly IMovieRepository _movieRepository;
     private IList<Movie> _movieList;
     private Movie _movie;
-    public event PropertyChangedEventHandler? PropertyChanged;
 
 
 
@@ -22,13 +21,13 @@ public class SideBarViewModel : ViewModelBase, ISideBarViewModel, INotifyPropert
 
     public IList<Movie> Movies { get { return _movieList; } private set {
         _movieList = value;
-        PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Movies"));
+        this.RaisePropertyChanged();
         } }
 
     public Movie? SelectedMovie { get { return _movie; } set
         {
             _movie = value;
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("SelectedMovie"));
+            this.RaisePropertyChanged();
         }
     }
 

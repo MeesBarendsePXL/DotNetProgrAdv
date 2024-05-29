@@ -5,6 +5,8 @@ namespace Exercise2.Model
 {
     public class Movie : INotifyPropertyChanged
     {
+        private int _rating;
+        public event PropertyChangedEventHandler? PropertyChanged;
         public string Title { get; set; }
         public string OpeningCrawl { get; set; }
 
@@ -22,13 +24,12 @@ namespace Exercise2.Model
                 {
                     _rating = value;
                 }
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Rating"));
+                
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Rating"));
             }
         }
 
-        private int _rating;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
 
         public Movie()
         {
